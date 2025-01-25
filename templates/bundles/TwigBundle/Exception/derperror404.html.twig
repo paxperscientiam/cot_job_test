@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="text-red-700">404 age not found</h1>
+
+    <p>
+        The requested page couldn't be located. <a class="text-blue-600 visited:text-purple-600" href="{{ path('app_home') }}">Return to the homepage</a>.
+    </p>
+{% endblock %}
