@@ -3,18 +3,18 @@
 {% block title %}Welcome to Ticket Huffer!{% endblock %}
 
 {% block body %}
-    <div class="px-12 pt-10 w-full">
-        <h1 class="text-4xl font-semibold mb-8">
-            Ticket Huffer
-        </h1>
-        <ul class='list-disc list-inside'>Available tickets
-            {% for ticket in tickets %}
-                <li data-ticket-id="{{ ticket.id }}">
-                    <a href="{{ path('app_ticket_detail', {id: ticket.id}) }}">
-                        {{ ticket.artist }} playing at {{ ticket.venue }}
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
+<div class="px-12 pt-10 w-full">
+    <h1 class="text-4xl font-semibold mb-8">
+        Ticket Huffer
+    </h1>
+    {% for ticket in tickets %}
+        <div data-ticket-id="{{ ticket.id }}" class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10 border-4 border-black border-dashed m-6">
+            <a href="{{ path('app_ticket_detail', {id: ticket.id}) }}">
+                {{ ticket.artist }} playing at {{ ticket.venue }}
+                <br>
+                Click for more
+            </a>
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}
