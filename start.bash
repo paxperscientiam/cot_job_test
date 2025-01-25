@@ -12,3 +12,5 @@ php bin/console asset-map:compile
 php bin/console cache:clear --env=prod --no-debug
 php bin/console cache:warmup --env=prod --no-debug
 
+# start server
+php -S localhost:8000 -t public/

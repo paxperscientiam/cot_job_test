@@ -6,12 +6,9 @@
 
 
 
-## Prepare for production
+## Prepare for production and start local server
 ```bash
 cd ./cot_job_test
 ./start.bash
 ```
-
-
-## Start PHP server
-php -S localhost:8000 -t public/
+ 
