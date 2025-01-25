@@ -5,13 +5,17 @@
 
 
 
-## Install dependencies
+## Prepare for production
 ```bash
-SYMFONY_ENV=prod APP_ENV=prod composer install --no-dev --optimize-autoloader
-```
+export SYMFONY_ENV=prod
+export APP_ENV=prod
 
-```php
+# install dependencies
+composer install --no-dev --optimize-autoloader
+
+# prep assets and cache
+php bin/console asset-map:compile
 php bin/console cache:clear --env=prod --no-debug
 php bin/console cache:warmup --env=prod --no-debug
-
 ```
+
